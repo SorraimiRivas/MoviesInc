@@ -1,12 +1,10 @@
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
+import HomeScreen from './screens/home/HomeScreen';
+import Navigation from './navigation';
 
-const App = () => {
-  return (
-    <SafeAreaView style={styles.appContainer}>
-      <Text>App</Text>
-    </SafeAreaView>
-  );
+const App: FC = () => {
+  return <Navigation />;
 };
 
 const styles = StyleSheet.create({
