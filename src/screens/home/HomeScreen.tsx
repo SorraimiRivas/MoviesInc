@@ -1,6 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
 import {
-  Text,
   StatusBar,
   Button,
   SafeAreaView,
@@ -12,8 +11,7 @@ import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
 import {TProps} from '../../types/NavigationProps';
 import {IMovie} from '../../types/MovieTypes';
-import useMovieList from '../../hooks';
-import {BASE_URL} from '../../api';
+import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/Card';
 
 const HomeScreen: FC<TProps> = () => {
@@ -30,7 +28,18 @@ const HomeScreen: FC<TProps> = () => {
           page: 1,
         },
       });
-      setMovies([...response.data.results]);
+      const formattedMovies = response.data.results.map(movie => {
+        return {
+          id: movie.id,
+          title: movie.title,
+          poster: `${POSTER_URL}${movie.poster_path}`,
+          backdrop: `${BACKDROP_URL}${movie.backdrop_path}`,
+          releaseDate: movie.release_date,
+          rating: movie.vote_average,
+          overview: movie.overview,
+        };
+      });
+      setMovies(formattedMovies);
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +53,7 @@ const HomeScreen: FC<TProps> = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'teal'} />
+      <StatusBar backgroundColor={'auto'} />
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={2}
@@ -54,6 +63,7 @@ const HomeScreen: FC<TProps> = () => {
           <Card
             onPress={() => navigation.navigate('Details', {id: item.id})}
             title={item.title}
+            image={item.poster}
           />
         )}
       />
@@ -70,6 +80,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
 });
 export default HomeScreen;
