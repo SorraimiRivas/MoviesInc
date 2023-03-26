@@ -1,8 +1,9 @@
-import {StackScreenProps} from '@react-navigation/stack';
-export type RootStackParams = {
+import { StackScreenProps } from '@react-navigation/stack';
+
+export type TRootStackParams = {
   Home: undefined;
   Details: undefined;
   onPress: () => void;
 };
 
-export type Props = StackScreenProps<RootStackParams, 'Home'>;
+export type TProps = StackScreenProps<TRootStackParams, 'Home'>;
