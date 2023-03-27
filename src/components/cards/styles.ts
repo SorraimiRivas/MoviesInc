@@ -2,22 +2,14 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    height: 250,
+    height: 300,
     width: 160,
-    borderRadius: 5,
+    borderRadius: 1,
     backgroundColor: 'white',
-    shadowColor: 'black',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
     margin: 15,
   },
   imageContainer: {
-    height: '70%',
+    height: 245,
     width: '100%',
   },
   image: {
@@ -28,5 +20,30 @@ export const styles = StyleSheet.create({
   textContainer: {
     height: '30%',
     width: '100%',
+    padding: 4,
+  },
+  titleRatingContainer: {
+    width: 160,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    overflow: 'hidden',
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+
+  text: {
+    top: 2,
+    fontSize: 12,
+    color: 'gray',
+  },
+  release: {},
+  rating: {
+    top: 3,
+    fontSize: 12,
+    color: 'gray',
+    right: 6,
   },
 });

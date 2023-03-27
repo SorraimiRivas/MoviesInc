@@ -1,20 +1,15 @@
 import React, {FC, useEffect, useState} from 'react';
-import {
-  StatusBar,
-  Button,
-  SafeAreaView,
-  StyleSheet,
-  FlatList,
-} from 'react-native';
+import {StatusBar, SafeAreaView, StyleSheet, FlatList} from 'react-native';
 import Config from 'react-native-config';
 import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
-import {TProps} from '../../types/NavigationProps';
+import {TNavProps} from '../../types/NavigationProps';
 import {IMovie} from '../../types/MovieTypes';
 import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/Card';
+import styles from '../../theme';
 
-const HomeScreen: FC<TProps> = () => {
+const HomeScreen: FC<TNavProps> = () => {
   const navigation = useNavigation();
   const [movies, setMovies] = useState<IMovie[]>([]);
 
@@ -28,7 +23,7 @@ const HomeScreen: FC<TProps> = () => {
           page: 1,
         },
       });
-      const formattedMovies = response.data.results.map(movie => {
+      const formattedMovies = response.data.results.map((movie: any) => {
         return {
           id: movie.id,
           title: movie.title,
@@ -64,23 +59,13 @@ const HomeScreen: FC<TProps> = () => {
             onPress={() => navigation.navigate('Details', {id: item.id})}
             title={item.title}
             image={item.poster}
+            releaseDate={item.releaseDate}
+            rating={item.rating}
           />
         )}
-      />
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
       />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-});
 export default HomeScreen;

@@ -1,15 +1,17 @@
 export interface IMovie {
-  id: number;
   title: string;
-  posterUrl: string;
+  id: number;
+  poster: string;
   releaseDate: string;
+  rating: string;
+  overview: string;
 }
 
 export interface IMovieDetails {
   id: number;
   title: string;
-  posterUrl: string;
+  poster: string;
   releaseDate: string;
   rating: number;
-  details: string;
+  overview: string;
 }
