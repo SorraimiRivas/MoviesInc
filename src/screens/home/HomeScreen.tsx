@@ -4,16 +4,17 @@ import Config from 'react-native-config';
 import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
 import {TNavProps} from '../../types/NavigationProps';
-import {IMovie} from '../../types/MovieTypes';
+import {TMovie} from '../../types/MovieTypes';
 import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
-import Card from '../../components/cards/Card';
+import Card from '../../components/cards/movie/Card';
 import styles from '../../theme';
 
 const HomeScreen: FC<TNavProps> = () => {
   const navigation = useNavigation();
-  const [movies, setMovies] = useState<IMovie[]>([]);
+  const [movies, setMovies] = useState<TMovie[]>([]);
 
   const api_key = Config.API_KEY;
+
   const getMovies = async () => {
     try {
       const response = await axios.request({

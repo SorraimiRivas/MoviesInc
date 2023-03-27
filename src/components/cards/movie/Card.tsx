@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {styles} from './styles';
-import {BACKDROP_URL, POSTER_URL} from '../../api';
-import {TCardProps} from '../../types/CardTypes';
-import {formatDate} from '../../utils';
+import {BACKDROP_URL, POSTER_URL} from '../../../api';
+import {TCardProps} from '../../../types/CardTypes';
+import {formatDate} from '../../../utils';
 
 const Card: FC<TCardProps> = ({title, onPress, image, releaseDate, rating}) => {
   return (

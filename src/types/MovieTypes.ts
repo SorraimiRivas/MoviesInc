@@ -1,11 +1,25 @@
-export interface IMovie {
+export type TMovie = {
   title: string;
   id: number;
   poster: string;
+  backdrop?: string;
   releaseDate: string;
-  rating: string;
+  rating: number;
   overview: string;
-}
+  cast?: [
+    {
+      name: string;
+      profile_path: string;
+      character: string;
+      id: number;
+    },
+  ];
+  genres: [
+    {
+      name: string;
+    },
+  ];
+};
 
 export interface IMovieDetails {
   id: number;
