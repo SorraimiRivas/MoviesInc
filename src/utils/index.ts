@@ -12,7 +12,6 @@ const formatDateString = (dateString: string): string => {
 };
 
 export const formattedMovie = (movie: any) => {
-  // console.log('Formating Data', JSON.stringify(movie, '', 2));
   return {
     id: movie.id,
     title: movie.title,
@@ -23,6 +22,5 @@ export const formattedMovie = (movie: any) => {
     overview: movie.overview,
     cast: movie.credits.cast,
     genres: movie.genres,
-    // genres,
   };
 };

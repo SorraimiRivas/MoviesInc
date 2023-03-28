@@ -1,51 +1,23 @@
 import {View, Text, Image, FlatList} from 'react-native';
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import {useRoute} from '@react-navigation/native';
 import {TNavProps} from '../../types/NavigationProps';
-
-import {formatDate, formattedMovie} from '../../utils';
+import {formatDate} from '../../utils';
 import styles from './styles';
 import Profile from '../../components/cards/cast/Profile';
 import {ScrollView} from 'react-native-gesture-handler';
 import useMovieById from '../../hooks';
-import Config from 'react-native-config';
-import {BASE_URL} from '../../api';
-import axios from 'axios';
 
 const MovieDetails: FC<TNavProps> = () => {
-  // const [movie, setMovie] = useState<TMovie>({});
-
   const {
     params: {id},
   } = useRoute();
-  const api_key = Config.API_KEY;
 
   const movie = useMovieById(id);
 
-  // const getMovieById = async () => {
-  //   try {
-  //     const response = await axios.request({
-  //       url: `${BASE_URL}movie/${id}`,
-  //       params: {
-  //         api_key,
-  //         append_to_response: 'credits,similar',
-  //       },
-  //     });
-  //     setMovie(formattedMovie(response.data));
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // console.log(JSON.stringify(movie, '', 2));
-  const movieData = movie ? movie : {};
-  console.log(movieData);
-  console.log('movieData');
   const renderGenres = ({item}) => {
     return <Text style={{marginHorizontal: 4, fontSize: 12}}>{item.name}</Text>;
   };
-
-  // useEffect(() => {}, []);
 
   return (
     <ScrollView style={styles.container}>

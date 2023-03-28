@@ -45,8 +45,6 @@ const HomeScreen: FC<TNavProps> = () => {
     getMovies();
   }, []);
 
-  // console.log('data', JSON.stringify(movies[0], '  ', 1));
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={'auto'} />

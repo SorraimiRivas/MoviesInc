@@ -3,6 +3,5 @@ export type TCardProps = {
   releaseDate: string;
   image: string;
   onPress: () => void;
-  poster: string;
   rating: number;
 };

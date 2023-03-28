@@ -4,13 +4,12 @@ export const styles = StyleSheet.create({
   container: {
     height: 300,
     width: 160,
-    borderRadius: 1,
-    backgroundColor: 'white',
     margin: 15,
   },
   imageContainer: {
     height: 245,
     width: '100%',
+    padding: 5,
   },
   image: {
     height: '100%',
