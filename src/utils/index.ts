@@ -12,14 +12,7 @@ const formatDateString = (dateString: string): string => {
 };
 
 export const formattedMovie = (movie: any) => {
-  const genres = movie.genres.reduce(
-    (obj: {[key: string]: string}, genre: string, index: number) => {
-      obj[`genre${index + 1}`] = genre.name;
-      return obj;
-    },
-    {},
-  );
-
+  // console.log('Formating Data', JSON.stringify(movie, '', 2));
   return {
     id: movie.id,
     title: movie.title,
@@ -29,6 +22,7 @@ export const formattedMovie = (movie: any) => {
     rating: movie.vote_average,
     overview: movie.overview,
     cast: movie.credits.cast,
-    genres,
+    genres: movie.genres,
+    // genres,
   };
 };

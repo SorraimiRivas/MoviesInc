@@ -9,7 +9,7 @@ const Stack = createStackNavigator<TRootStackParams>();
 const Navigation: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeScreen}
