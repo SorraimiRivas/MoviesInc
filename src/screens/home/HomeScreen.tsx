@@ -47,7 +47,6 @@ const HomeScreen: FC<TNavProps> = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'auto'} />
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={2}
