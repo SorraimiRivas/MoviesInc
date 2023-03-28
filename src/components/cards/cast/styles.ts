@@ -14,12 +14,14 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 12,
+    fontWeight: 'bold',
     textAlign: 'left',
     marginTop: 4,
+    color: 'white',
   },
   character: {
     fontSize: 10,
-    color: 'gray',
+    color: '#ffffffdf',
     textAlign: 'left',
   },
   characterInfo: {

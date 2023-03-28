@@ -1,5 +1,5 @@
 import {View, Text, Image, FlatList} from 'react-native';
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {useRoute} from '@react-navigation/native';
 import {TNavProps} from '../../types/NavigationProps';
 import {formatDate} from '../../utils';
@@ -7,17 +7,40 @@ import styles from './styles';
 import Profile from '../../components/cards/cast/Profile';
 import {ScrollView} from 'react-native-gesture-handler';
 import useMovieById from '../../hooks';
-import {Star} from 'react-native-feather';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Material from 'react-native-vector-icons/FontAwesome';
+import StarsButton from '../../components/buttons/rating/StarsButton';
+
+import RatingModal from '../../components/modal/ratingModal/RatingModal';
 
 const MovieDetails: FC<TNavProps> = () => {
+  const [isModalVisible, setIsModalVisble] = useState<boolean>(false);
   const {
     params: {id},
   } = useRoute();
 
   const movie = useMovieById(id);
 
-  const renderGenres = ({item}) => {
-    return <Text style={{marginHorizontal: 4, fontSize: 12}}>{item.name}</Text>;
+  const renderGenres = ({item}: any) => {
+    return (
+      <Text
+        style={{
+          marginHorizontal: 4,
+          fontSize: 12,
+          color: '#ffffffdf',
+          fontWeight: 'bold',
+        }}>
+        {item.name}
+      </Text>
+    );
+  };
+
+  const handleModalVisible = () => {
+    setIsModalVisble(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisble(false);
   };
 
   return (
@@ -28,17 +51,28 @@ const MovieDetails: FC<TNavProps> = () => {
         <Text style={styles.title}>{movie.title}</Text>
       </View>
       <View style={styles.infoContainer}>
+        <Icon
+          style={styles.calendar}
+          name="calendar"
+          size={12}
+          color="#ffffffdf"
+        />
         <Text style={styles.release}>{formatDate(movie.releaseDate)}</Text>
       </View>
       <View style={styles.genres}>
-        <FlatList
-          data={movie.genres}
-          horizontal
-          keyExtractor={(item, index) => `${item.id + index.toString()}`}
-          renderItem={renderGenres}
-          scrollEnabled={false}
-        />
+        <Material name="film" size={12} color="#ffffffdf" />
+        <View>
+          <FlatList
+            data={movie.genres}
+            horizontal
+            keyExtractor={(item: any, index) => `${item.id + index.toString()}`}
+            renderItem={renderGenres}
+            scrollEnabled={false}
+          />
+        </View>
       </View>
+      <StarsButton rating={movie.rating} onPress={handleModalVisible} />
+      <RatingModal visible={isModalVisible} onClose={handleCloseModal} />
       <View style={styles.overviewContainer}>
         <Text style={styles.subtitle}>Overview</Text>
         <Text style={styles.overview}>{movie.overview}</Text>

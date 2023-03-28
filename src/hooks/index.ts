@@ -19,13 +19,8 @@ const useMovieById = (id: number) => {
             append_to_response: 'credits,similar',
           },
         });
-        // console.log(JSON.stringify(response.data, '', 2));
         const data = response ? response.data : {};
-        // console.log(data);
-        // console.log('data');
         const formatted = formattedMovie(data);
-        // console.log(formatted);
-        // console.log('formatted');
         setMovie(formatted);
       } catch (error) {
         console.log(error);
@@ -33,9 +28,8 @@ const useMovieById = (id: number) => {
     };
 
     getMovieById();
-  }, []);
-  // console.log(movie);
-  // console.log('LOGGIN: ', JSON.stringify(movie, '', 2));
+  }, [id]);
+
   return movie;
 };
 

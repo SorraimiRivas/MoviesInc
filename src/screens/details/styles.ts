@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
+    backgroundColor: '#0d253f',
   },
   backdrop: {
     height: 220,
@@ -30,30 +31,38 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     left: 140,
     top: 20,
+    color: 'white',
   },
   infoContainer: {
     width: 200,
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     left: 140,
     top: 25,
   },
+  calendar: {
+    marginRight: 4,
+  },
   release: {
     fontSize: 10,
-    color: 'black',
+    color: '#ffffffdf',
+    fontWeight: 'bold',
   },
   genres: {
-    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
-    top: 60,
+    top: 50,
   },
   subtitle: {
     marginVertical: 10,
     fontSize: 14,
     fontWeight: 'bold',
+    color: 'white',
   },
   overview: {
     fontSize: 12,
+    color: 'white',
   },
   separator: {
     height: 10,

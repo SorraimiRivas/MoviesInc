@@ -24,3 +24,7 @@ export const formattedMovie = (movie: any) => {
     genres: movie.genres,
   };
 };
+
+export const roundNumber = (num: number) => {
+  return Math.ceil(num * 10) / 10;
+};

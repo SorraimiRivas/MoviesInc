@@ -4,12 +4,12 @@ export const styles = StyleSheet.create({
   container: {
     height: 300,
     width: 160,
-    margin: 15,
+    marginVertical: 8,
+    marginHorizontal: 10,
   },
   imageContainer: {
     height: 245,
     width: '100%',
-    padding: 5,
   },
   image: {
     height: '100%',
@@ -17,32 +17,40 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textContainer: {
-    height: '30%',
     width: '100%',
     padding: 4,
   },
-  titleRatingContainer: {
+  releaseRatingContainer: {
     width: 160,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     overflow: 'hidden',
   },
+  ratingContentContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  star: {
+    right: 10,
+    top: 3,
+  },
   title: {
     fontSize: 14,
     fontWeight: 'bold',
+    color: 'white',
   },
 
   text: {
     top: 2,
     fontSize: 12,
-    color: 'gray',
+    color: '#ffffffdf',
   },
-  release: {},
   rating: {
     top: 3,
     fontSize: 12,
-    color: 'gray',
+    color: '#ffffffdf',
     right: 6,
   },
 });
