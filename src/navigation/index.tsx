@@ -15,8 +15,6 @@ const Navigation: React.FC = () => {
           component={HomeScreen}
           options={{
             title: 'Movies Inc',
-            headerStyle: {backgroundColor: '#01b4e4'},
-            headerTintColor: '#fff',
           }}
         />
         <Stack.Screen name="Details" component={MovieDetails} />

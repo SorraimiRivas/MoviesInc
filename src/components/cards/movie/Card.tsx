@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {styles} from './styles';
-import {BACKDROP_URL, POSTER_URL} from '../../../api';
 import {TCardProps} from '../../../types/CardTypes';
 import {formatDate} from '../../../utils';
 

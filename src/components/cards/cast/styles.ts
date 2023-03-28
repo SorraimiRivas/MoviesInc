@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   characterInfo: {
     width: 100,
-    height: 50,
+    height: 60,
     left: 4,
   },
 });

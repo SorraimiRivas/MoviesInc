@@ -7,6 +7,7 @@ import styles from './styles';
 import Profile from '../../components/cards/cast/Profile';
 import {ScrollView} from 'react-native-gesture-handler';
 import useMovieById from '../../hooks';
+import {Star} from 'react-native-feather';
 
 const MovieDetails: FC<TNavProps> = () => {
   const {
@@ -21,9 +22,7 @@ const MovieDetails: FC<TNavProps> = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {movie.backdrop && (
-        <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
-      )}
+      <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
       <Image style={styles.poster} source={{uri: movie.poster}} />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{movie.title}</Text>
