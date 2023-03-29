@@ -12,6 +12,7 @@ import RatingModal from '../../components/modal/ratingModal/RatingModal';
 
 const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisble] = useState<boolean>(false);
+
   const {
     params: {id},
   } = useRoute();
@@ -39,7 +40,6 @@ const MovieDetails: FC = () => {
   const handleCloseModal = () => {
     setIsModalVisble(false);
   };
-  console.log(movie.rating);
 
   const formattedDate = formatDate(movie.releaseDate);
   return (

@@ -10,7 +10,11 @@ const Profile: FC<TProfileProps> = ({profile_path, name, character}) => {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={{uri: `${PROFILE_URL}${profile_path}`}}
+          source={
+            profile_path
+              ? {uri: `${PROFILE_URL}${profile_path}`}
+              : require('../../../assets/images/placeholder.jpg')
+          }
         />
       </View>
       <View style={styles.characterInfo}>
