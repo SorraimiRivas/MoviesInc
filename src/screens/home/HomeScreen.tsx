@@ -56,7 +56,11 @@ const HomeScreen: FC = () => {
         keyExtractor={movie => movie.id.toString()}
         renderItem={({item}) => (
           <Card
-            onPress={() => navigation.navigate('Details', {id: item.id})}
+            onPress={() =>
+              navigation.navigate('Details', {
+                item: item,
+              })
+            }
             title={item.title}
             image={item.poster}
             releaseDate={item.releaseDate}

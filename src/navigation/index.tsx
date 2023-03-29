@@ -4,12 +4,19 @@ import HomeScreen from '../screens/home/HomeScreen';
 import MovieDetailsScreen from '../screens/details/MovieDetailsScreen';
 import {TRootStackParams} from '../types/NavigationProps';
 import BookMarkButton from '../components/buttons/favorite/BookMarkButton';
+import {Alert} from 'react-native';
+import {useDispatch} from 'react-redux';
 
 const Stack = createStackNavigator<TRootStackParams>();
 
 const Navigation = () => {
   const style = {
     right: 20,
+    top: 3,
+  };
+  const iconName = '';
+  const handleOnPress = () => {
+    Alert.alert('Pressed');
   };
   return (
     <NavigationContainer>
@@ -33,7 +40,14 @@ const Navigation = () => {
               backgroundColor: '#0d253f',
             },
             headerTintColor: 'white',
-            headerRight: () => <BookMarkButton style={style} size={30} />,
+            headerRight: () => (
+              <BookMarkButton
+                name={iconName}
+                style={style}
+                size={25}
+                onPress={handleOnPress}
+              />
+            ),
           }}
         />
       </Stack.Navigator>

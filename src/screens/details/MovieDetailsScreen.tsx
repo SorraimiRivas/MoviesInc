@@ -14,7 +14,9 @@ const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisble] = useState<boolean>(false);
 
   const {
-    params: {id},
+    params: {
+      item: {id},
+    },
   } = useRoute();
 
   const movie = useMovieById(id);
@@ -46,6 +48,12 @@ const MovieDetails: FC = () => {
     <ScrollView style={styles.container}>
       <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
       <Image style={styles.poster} source={{uri: movie.poster}} />
+      <StarsButton rating={movie.rating} onPress={handleModalVisible} />
+      <RatingModal
+        visible={isModalVisible}
+        onClose={handleCloseModal}
+        id={id}
+      />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{movie.title}</Text>
       </View>
@@ -70,12 +78,6 @@ const MovieDetails: FC = () => {
           />
         </View>
       </View>
-      <StarsButton rating={movie.rating} onPress={handleModalVisible} />
-      <RatingModal
-        visible={isModalVisible}
-        onClose={handleCloseModal}
-        id={id}
-      />
       <View style={styles.overviewContainer}>
         <Text style={styles.subtitle}>Overview</Text>
         <Text style={styles.overview}>{movie.overview}</Text>
