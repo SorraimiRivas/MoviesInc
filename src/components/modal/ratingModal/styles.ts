@@ -29,14 +29,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cancelButton: {
-    backgroundColor: 'red',
+    backgroundColor: 'darkred',
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
     margin: 10,
   },
   submitButton: {
-    backgroundColor: 'green',
+    backgroundColor: 'darkgreen',
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,

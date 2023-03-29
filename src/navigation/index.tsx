@@ -6,7 +6,7 @@ import {TRootStackParams} from '../types/NavigationProps';
 
 const Stack = createStackNavigator<TRootStackParams>();
 
-const Navigation: React.FC = () => {
+const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">

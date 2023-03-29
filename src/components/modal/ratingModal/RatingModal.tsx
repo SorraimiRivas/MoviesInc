@@ -1,19 +1,23 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import {Rating} from 'react-native-elements';
 import styles from './styles';
+import {TModalProps} from '../../../types/ModalTypes';
+import {usePostRating} from '../../../hooks';
 
-const RatingModal = ({visible, onClose}) => {
+const RatingModal: FC<TModalProps> = ({visible, onClose, id}) => {
   const [rating, setRating] = useState(0);
   const [error, setError] = useState('');
+
+  const {postRatingRequest, sessionId} = usePostRating();
 
   const handleSubmit = () => {
     if (rating === 0) {
       setError('Please select a rating');
       return;
     }
-    // Submit the rating to the server or perform some other action
-    console.log(`Submitted rating: ${rating}`);
+    // Submit the rating to the server
+    postRatingRequest(id, rating, sessionId);
     onClose();
   };
 
@@ -29,14 +33,11 @@ const RatingModal = ({visible, onClose}) => {
           <Rating
             type="star"
             ratingBackground="transparent"
-            ratingCount={10}
+            tintColor="#0d253f"
+            ratingCount={5}
             imageSize={35}
-            fractions={1}
             startingValue={rating}
             onFinishRating={setRating}
-            showRating
-            showReviews
-            tintColor="#0d253f"
           />
           {error ? <Text style={styles.errorText}>{error}</Text> : null}
 

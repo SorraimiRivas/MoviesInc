@@ -9,7 +9,7 @@ import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/movie/Card';
 import styles from '../../theme';
 
-const HomeScreen: FC<TNavProps> = () => {
+const HomeScreen: FC = () => {
   const navigation = useNavigation();
   const [movies, setMovies] = useState<TMovie[]>([]);
 

@@ -6,14 +6,13 @@ import {formatDate} from '../../utils';
 import styles from './styles';
 import Profile from '../../components/cards/cast/Profile';
 import {ScrollView} from 'react-native-gesture-handler';
-import useMovieById from '../../hooks';
+import {useMovieById} from '../../hooks';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Material from 'react-native-vector-icons/FontAwesome';
 import StarsButton from '../../components/buttons/rating/StarsButton';
-
 import RatingModal from '../../components/modal/ratingModal/RatingModal';
 
-const MovieDetails: FC<TNavProps> = () => {
+const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisble] = useState<boolean>(false);
   const {
     params: {id},
@@ -72,7 +71,11 @@ const MovieDetails: FC<TNavProps> = () => {
         </View>
       </View>
       <StarsButton rating={movie.rating} onPress={handleModalVisible} />
-      <RatingModal visible={isModalVisible} onClose={handleCloseModal} />
+      <RatingModal
+        visible={isModalVisible}
+        onClose={handleCloseModal}
+        id={id}
+      />
       <View style={styles.overviewContainer}>
         <Text style={styles.subtitle}>Overview</Text>
         <Text style={styles.overview}>{movie.overview}</Text>

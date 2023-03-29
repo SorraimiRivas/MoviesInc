@@ -11,11 +11,7 @@ const StarsButton: FC<TStarsButtonProps> = ({rating, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.starContainer}>
-        <Icon name="star-o" size={16} color="#01b4e4" />
-        <Icon name="star-o" size={16} color="#01b4e4" />
-        <Icon name="star-o" size={16} color="#01b4e4" />
-        <Icon name="star-o" size={16} color="#01b4e4" />
-        <Icon name="star-o" size={16} color="#01b4e4" />
+        <Icon name="star" size={16} color="orange" />
       </View>
       <Text style={styles.rating}>{rounded}</Text>
     </TouchableOpacity>
