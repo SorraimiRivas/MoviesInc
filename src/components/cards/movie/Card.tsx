@@ -4,8 +4,8 @@ import {styles} from './styles';
 import {TCardProps} from '../../../types/CardTypes';
 import {formatDate} from '../../../utils';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import BookMarkButton from '../../buttons/favorite/BookMarkButton';
 import {useFavorites} from '../../../hooks/useFavorites';
+import BookmarkButton from '../../buttons/favorite/BookmarkButton';
 
 const Card: FC<TCardProps> = ({
   title,
@@ -32,7 +32,7 @@ const Card: FC<TCardProps> = ({
             uri: image,
           }}
         />
-        <BookMarkButton
+        <BookmarkButton
           size={25}
           style={styles.bookmark}
           onPress={handleOnPress}

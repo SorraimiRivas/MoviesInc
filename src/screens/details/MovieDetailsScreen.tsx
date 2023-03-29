@@ -9,10 +9,12 @@ import {useMovieById} from '../../hooks';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import StarsButton from '../../components/buttons/rating/StarsButton';
 import RatingModal from '../../components/modal/ratingModal/RatingModal';
+import BookmarkButton from '../../components/buttons/favorite/BookmarkButton';
+import {useFavorites} from '../../hooks/useFavorites';
 
 const MovieDetails: FC = () => {
-  const [isModalVisible, setIsModalVisble] = useState<boolean>(false);
-
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const {isFavorite, addFavoriteMovie} = useFavorites();
   const {
     params: {
       item: {id},
@@ -36,18 +38,31 @@ const MovieDetails: FC = () => {
   };
 
   const handleModalVisible = () => {
-    setIsModalVisble(true);
+    setIsModalVisible(true);
   };
 
   const handleCloseModal = () => {
-    setIsModalVisble(false);
+    setIsModalVisible(false);
   };
 
+  const handleOnPress = () => {
+    addFavoriteMovie(movie);
+  };
+
+  const iconColor = isFavorite(id) ? '#01b4e4' : 'gray';
+
   const formattedDate = formatDate(movie.releaseDate);
+
   return (
     <ScrollView style={styles.container}>
       <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
       <Image style={styles.poster} source={{uri: movie.poster}} />
+      <BookmarkButton
+        size={30}
+        style={{position: 'absolute'}}
+        color={iconColor}
+        onPress={handleOnPress}
+      />
       <StarsButton rating={movie.rating} onPress={handleModalVisible} />
       <RatingModal
         visible={isModalVisible}

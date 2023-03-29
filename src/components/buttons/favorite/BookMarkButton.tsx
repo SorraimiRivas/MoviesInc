@@ -1,9 +1,14 @@
-import {View, Text, Pressable} from 'react-native';
+import {Pressable} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {useFavorites} from '../../../hooks/useFavorites';
+import {TBookmarkButtonProps} from '../../../types/ButtonTypes';
 
-const BookMarkButton = ({size, style, onPress, color}) => {
+const BookmarkButton = ({
+  size,
+  style,
+  onPress,
+  color,
+}: TBookmarkButtonProps) => {
   return (
     <Pressable style={style}>
       <Icon name="bookmark" size={size} color={color} onPress={onPress} />
@@ -11,4 +16,4 @@ const BookMarkButton = ({size, style, onPress, color}) => {
   );
 };
 
-export default BookMarkButton;
+export default BookmarkButton;

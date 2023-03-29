@@ -77,6 +77,9 @@ const styles = StyleSheet.create({
     top: 80,
     marginHorizontal: 30,
   },
+  bookmark: {
+    position: 'relative',
+  },
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/home/HomeScreen';
 import MovieDetailsScreen from '../screens/details/MovieDetailsScreen';
@@ -40,8 +40,21 @@ const HomeStack = () => {
 const BottomTab = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Favorites" component={FavoriteScreen} />
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={FavoriteScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#0d253f',
+          },
+          headerTintColor: 'white',
+        }}
+      />
     </Tab.Navigator>
   );
 };

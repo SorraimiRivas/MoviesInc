@@ -11,7 +11,6 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite(state, action: PayloadAction<TCardProps>) {
-      console.log('Added');
       state.favorites.push(action.payload);
     },
     removeFavorite(state, action: PayloadAction<number>) {

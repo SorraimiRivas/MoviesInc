@@ -7,7 +7,7 @@ import {TNavProps} from '../../types/NavigationProps';
 import {TMovie} from '../../types/MovieTypes';
 import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/movie/Card';
-import styles from '../../theme';
+import globalStyle from '../../theme';
 import {sortMoviesByTitle} from '../../utils';
 
 const HomeScreen: FC = () => {
@@ -48,7 +48,7 @@ const HomeScreen: FC = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={globalStyle.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={2}
