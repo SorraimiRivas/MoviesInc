@@ -11,6 +11,7 @@ import StarsButton from '../../components/buttons/rating/StarsButton';
 import RatingModal from '../../components/modal/ratingModal/RatingModal';
 import BookmarkButton from '../../components/buttons/favorite/BookmarkButton';
 import {useFavorites} from '../../hooks/useFavorites';
+import {RouteParams} from '../../types/NavigationProps';
 
 const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -19,7 +20,7 @@ const MovieDetails: FC = () => {
     params: {
       item: {id},
     },
-  } = useRoute();
+  } = useRoute<RouteParams>();
 
   const movie = useMovieById(id);
   const {title, rating, releaseDate, poster: image} = movie;
