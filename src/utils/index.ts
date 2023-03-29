@@ -6,7 +6,7 @@ export const formatDate = (dateString: string): string => {
   return date.toLocaleDateString(undefined, options);
 };
 
-export const formattedMovie = (movie: any) => {
+export const formatMovie = (movie: any) => {
   return {
     id: movie.id,
     title: movie.title,
@@ -22,4 +22,8 @@ export const formattedMovie = (movie: any) => {
 
 export const roundNumber = (num: number) => {
   return Math.ceil(num * 10) / 10;
+};
+
+export const sortMoviesByTitle = (objects: any) => {
+  return objects.sort((a, b) => a.title.localeCompare(b.title));
 };

@@ -8,6 +8,7 @@ import {TMovie} from '../../types/MovieTypes';
 import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/movie/Card';
 import styles from '../../theme';
+import {sortMoviesByTitle} from '../../utils';
 
 const HomeScreen: FC = () => {
   const navigation = useNavigation();
@@ -41,6 +42,7 @@ const HomeScreen: FC = () => {
     }
   };
 
+  const sortedMovies = sortMoviesByTitle(movies);
   useEffect(() => {
     getMovies();
   }, []);
@@ -50,7 +52,7 @@ const HomeScreen: FC = () => {
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={2}
-        data={movies}
+        data={sortedMovies}
         keyExtractor={movie => movie.id.toString()}
         renderItem={({item}) => (
           <Card

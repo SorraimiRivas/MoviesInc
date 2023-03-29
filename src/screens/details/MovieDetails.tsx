@@ -1,14 +1,12 @@
 import {View, Text, Image, FlatList} from 'react-native';
 import React, {FC, useState} from 'react';
 import {useRoute} from '@react-navigation/native';
-import {TNavProps} from '../../types/NavigationProps';
 import {formatDate} from '../../utils';
 import styles from './styles';
 import Profile from '../../components/cards/cast/Profile';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useMovieById} from '../../hooks';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Material from 'react-native-vector-icons/FontAwesome';
 import StarsButton from '../../components/buttons/rating/StarsButton';
 import RatingModal from '../../components/modal/ratingModal/RatingModal';
 
@@ -41,7 +39,9 @@ const MovieDetails: FC = () => {
   const handleCloseModal = () => {
     setIsModalVisble(false);
   };
+  console.log(movie.rating);
 
+  const formattedDate = formatDate(movie.releaseDate);
   return (
     <ScrollView style={styles.container}>
       <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
@@ -56,10 +56,10 @@ const MovieDetails: FC = () => {
           size={12}
           color="#ffffffdf"
         />
-        <Text style={styles.release}>{formatDate(movie.releaseDate)}</Text>
+        <Text style={styles.release}>{formattedDate}</Text>
       </View>
       <View style={styles.genres}>
-        <Material name="film" size={12} color="#ffffffdf" />
+        <Icon name="film" size={12} color="#ffffffdf" />
         <View>
           <FlatList
             data={movie.genres}
