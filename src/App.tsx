@@ -5,11 +5,11 @@ import {PersistGate} from 'redux-persist/integration/react';
 
 const App = () => {
   return (
-    // <Provider store={store}>
-    // <PersistGate persistor={persistor}>
-    <Navigation />
-    // </PersistGate>
-    // </Provider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Navigation />
+      </PersistGate>
+    </Provider>
   );
 };
 

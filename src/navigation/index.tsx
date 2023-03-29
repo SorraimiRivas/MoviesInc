@@ -1,12 +1,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/home/HomeScreen';
-import MovieDetails from '../screens/details/MovieDetails';
+import MovieDetailsScreen from '../screens/details/MovieDetailsScreen';
 import {TRootStackParams} from '../types/NavigationProps';
+import BookMarkButton from '../components/buttons/favorite/BookMarkButton';
 
 const Stack = createStackNavigator<TRootStackParams>();
 
 const Navigation = () => {
+  const style = {
+    right: 20,
+  };
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -23,12 +27,13 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="Details"
-          component={MovieDetails}
+          component={MovieDetailsScreen}
           options={{
             headerStyle: {
               backgroundColor: '#0d253f',
             },
             headerTintColor: 'white',
+            headerRight: () => <BookMarkButton style={style} size={30} />,
           }}
         />
       </Stack.Navigator>

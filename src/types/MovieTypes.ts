@@ -5,7 +5,7 @@ export type TMovie = {
   backdrop?: string;
   releaseDate: string;
   rating: number;
-  overview: string;
+  overview?: string;
   cast?: [
     {
       name: string;
@@ -14,18 +14,9 @@ export type TMovie = {
       id: number;
     },
   ];
-  genres: [
+  genres?: [
     {
       name: string;
     },
   ];
 };
-
-export interface IMovieDetails {
-  id: number;
-  title: string;
-  poster: string;
-  releaseDate: string;
-  rating: number;
-  overview: string;
-}
