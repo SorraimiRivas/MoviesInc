@@ -58,8 +58,8 @@ const MovieDetails: FC = () => {
       <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
       <Image style={styles.poster} source={{uri: movie.poster}} />
       <BookmarkButton
-        size={30}
-        style={{position: 'absolute'}}
+        size={40}
+        style={styles.bookmark}
         color={iconColor}
         onPress={handleOnPress}
       />

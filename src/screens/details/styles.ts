@@ -78,7 +78,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   bookmark: {
-    position: 'relative',
+    position: 'absolute',
+    left: 340,
+    top: -5,
+    borderWidth: 1,
   },
 });
 
