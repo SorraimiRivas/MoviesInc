@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {FavoritesState} from '../../types/ReduxTypes';
-import {TCardProps} from '../../types/CardTypes';
+import {TMovie} from '../../types/MovieTypes';
 
 const initialState: FavoritesState = {
   favorites: [],
@@ -10,11 +10,10 @@ const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    addFavorite(state, action: PayloadAction<TCardProps>) {
+    addFavorite(state, action: PayloadAction<TMovie>) {
       state.favorites.push(action.payload);
     },
     removeFavorite(state, action: PayloadAction<number>) {
-      console.log('Removed');
       state.favorites = state.favorites.filter(
         favorite => favorite.id !== action.payload,
       );

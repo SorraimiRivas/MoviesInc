@@ -8,5 +8,5 @@ export type TGuestSession = {
 };
 
 export type FavoritesState = {
-  favorites: TCardProps[];
+  favorites: TMovie[];
 };

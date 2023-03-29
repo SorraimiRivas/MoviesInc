@@ -5,6 +5,7 @@ import MovieDetailsScreen from '../screens/details/MovieDetailsScreen';
 import {TRootStackParams} from '../types/NavigationProps';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FavoriteScreen from '../screens/favorites/FavoriteScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator<TRootStackParams>();
 const Tab = createBottomTabNavigator<TRootStackParams>();
@@ -39,11 +40,30 @@ const HomeStack = () => {
 
 const BottomTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        activeTintColor: 'blue',
+        inactiveTintColor: 'gray',
+        style: {
+          backgroundColor: '#0d253f',
+        },
+        labelStyle: {
+          fontSize: 14,
+          fontWeight: 'bold',
+        },
+        tabStyle: {
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        showIcon: true,
+      }}>
       <Tab.Screen
-        name="HomeStack"
+        name="Movies"
         component={HomeStack}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => <Icon name="film" color="orange" size={20} />,
+        }}
       />
       <Tab.Screen
         name="Favorites"
@@ -53,6 +73,7 @@ const BottomTab = () => {
             backgroundColor: '#0d253f',
           },
           headerTintColor: 'white',
+          tabBarIcon: () => <Icon name="bookmark" color="orange" size={20} />,
         }}
       />
     </Tab.Navigator>

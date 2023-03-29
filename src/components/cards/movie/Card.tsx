@@ -15,12 +15,13 @@ const Card: FC<TCardProps> = ({
   rating,
   id,
 }) => {
-  const {addFavoriteMovie, isFavorite} = useFavorites();
+  const {handleFavorites, isFavorite} = useFavorites();
   const formattedDate = formatDate(releaseDate);
   const iconColor = isFavorite(id) ? '#01b4e4' : 'gray';
 
+  console.log('this', rating);
   const handleOnPress = () => {
-    addFavoriteMovie({title, image, releaseDate, rating, id});
+    handleFavorites({title, image, releaseDate, rating, id});
   };
 
   return (

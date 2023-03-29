@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    height: 300,
+    height: 310,
     width: 160,
     marginVertical: 8,
     marginHorizontal: 10,
@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
   },
   textContainer: {
     width: '100%',
-    padding: 4,
   },
   releaseRatingContainer: {
     width: 160,
@@ -35,7 +34,6 @@ export const styles = StyleSheet.create({
   },
   star: {
     right: 10,
-    top: 3,
   },
   title: {
     fontSize: 14,
@@ -49,7 +47,6 @@ export const styles = StyleSheet.create({
     color: '#ffffffdf',
   },
   rating: {
-    top: 3,
     fontSize: 12,
     color: '#ffffffdf',
     right: 6,

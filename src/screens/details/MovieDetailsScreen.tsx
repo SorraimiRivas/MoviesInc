@@ -14,7 +14,7 @@ import {useFavorites} from '../../hooks/useFavorites';
 
 const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const {isFavorite, addFavoriteMovie} = useFavorites();
+  const {isFavorite, handleFavorites} = useFavorites();
   const {
     params: {
       item: {id},
@@ -22,7 +22,8 @@ const MovieDetails: FC = () => {
   } = useRoute();
 
   const movie = useMovieById(id);
-
+  const {title, rating, releaseDate, poster: image} = movie;
+  const favoriteInfo = {title, rating, releaseDate, image, id};
   const renderGenres = ({item}: any) => {
     return (
       <Text
@@ -46,7 +47,7 @@ const MovieDetails: FC = () => {
   };
 
   const handleOnPress = () => {
-    addFavoriteMovie(movie);
+    handleFavorites(favoriteInfo);
   };
 
   const iconColor = isFavorite(id) ? '#01b4e4' : 'gray';

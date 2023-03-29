@@ -16,7 +16,7 @@ const RatingModal: FC<TModalProps> = ({visible, onClose, id}) => {
       setError('Please select a rating');
       return;
     }
-    // Submit the rating to the server
+    // Submit the post request to the API
     postRatingRequest(id, rating, sessionId);
     onClose();
   };

@@ -1,7 +1,6 @@
 export type TMovie = {
   title: string;
   id: number;
-  poster: string;
   backdrop?: string;
   releaseDate: string;
   rating: number;

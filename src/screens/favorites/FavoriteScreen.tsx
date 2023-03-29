@@ -9,6 +9,9 @@ import styles from './styles';
 
 const FavoriteScreen = () => {
   const favorites = useSelector(state => state.favorites.favorites);
+  const navigation = useNavigation();
+
+  
 
   const emptyFavoriteState = () => {
     return (
@@ -39,6 +42,11 @@ const FavoriteScreen = () => {
             rating={item.rating}
             image={item.image}
             releaseDate={item.releaseDate}
+            onPress={() =>
+              navigation.navigate('Details', {
+                item: item,
+              })
+            }
           />
         )}
       />

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     left: 140,
-    top: 20,
+    top: 10,
     color: 'white',
   },
   infoContainer: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     left: 140,
-    top: 25,
+    top: 15,
   },
   calendar: {
     marginRight: 4,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    top: 50,
+    top: 55,
   },
   subtitle: {
     marginVertical: 10,
@@ -76,12 +76,12 @@ const styles = StyleSheet.create({
   cast: {
     top: 80,
     marginHorizontal: 30,
+    marginBottom: 200,
   },
   bookmark: {
     position: 'absolute',
     left: 340,
     top: -5,
-    borderWidth: 1,
   },
 });
 
