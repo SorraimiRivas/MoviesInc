@@ -1,3 +1,4 @@
+import {TCardProps} from './CardTypes';
 import {TMovie} from './MovieTypes';
 
 export type TGuestSession = {
@@ -7,5 +8,5 @@ export type TGuestSession = {
 };
 
 export type FavoritesState = {
-  favorites: TMovie[];
+  favorites: TCardProps[];
 };

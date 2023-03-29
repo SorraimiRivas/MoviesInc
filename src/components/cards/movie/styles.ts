@@ -54,4 +54,13 @@ export const styles = StyleSheet.create({
     color: '#ffffffdf',
     right: 6,
   },
+  bookmark: {
+    position: 'absolute',
+    left: 130,
+    textShadowOffset: {
+      width: 2,
+      height: 2,
+    },
+    textShadowColor: '#333',
+  },
 });

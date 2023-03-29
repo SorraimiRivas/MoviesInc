@@ -65,6 +65,7 @@ const HomeScreen: FC = () => {
             image={item.poster}
             releaseDate={item.releaseDate}
             rating={item.rating}
+            id={item.id}
           />
         )}
       />
