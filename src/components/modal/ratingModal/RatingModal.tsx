@@ -34,6 +34,7 @@ const RatingModal: FC<TModalProps> = ({visible, onClose, id}) => {
             type="star"
             ratingBackground="transparent"
             tintColor="#0d253f"
+            fractions={1}
             ratingCount={5}
             imageSize={35}
             startingValue={rating}

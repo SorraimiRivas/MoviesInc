@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    height: 310,
+    height: 300,
     width: 160,
     marginVertical: 8,
     marginHorizontal: 10,
@@ -14,11 +14,12 @@ export const styles = StyleSheet.create({
   image: {
     height: '100%',
     width: '100%',
-    resizeMode: 'contain',
-    borderRadius: 16,
+    borderRadius: 10,
+    resizeMode: 'cover',
   },
   textContainer: {
     width: '100%',
+    top: 4,
   },
   releaseRatingContainer: {
     width: 160,
@@ -54,10 +55,6 @@ export const styles = StyleSheet.create({
   bookmark: {
     position: 'absolute',
     left: 130,
-    textShadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    textShadowColor: '#333',
+    top: -2,
   },
 });

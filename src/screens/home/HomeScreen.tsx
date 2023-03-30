@@ -3,7 +3,7 @@ import {StatusBar, SafeAreaView, StyleSheet, FlatList} from 'react-native';
 import Config from 'react-native-config';
 import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
-import {TNavProps} from '../../types/NavigationProps';
+import {TNavProps} from '../../types/NavigationTypes';
 import {TMovie} from '../../types/MovieTypes';
 import {BACKDROP_URL, BASE_URL, POSTER_URL} from '../../api';
 import Card from '../../components/cards/movie/Card';

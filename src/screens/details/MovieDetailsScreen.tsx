@@ -11,7 +11,7 @@ import StarsButton from '../../components/buttons/rating/StarsButton';
 import RatingModal from '../../components/modal/ratingModal/RatingModal';
 import BookmarkButton from '../../components/buttons/favorite/BookmarkButton';
 import {useFavorites} from '../../hooks/useFavorites';
-import {RouteParams} from '../../types/NavigationProps';
+import {RouteParams} from '../../types/NavigationTypes';
 
 const MovieDetails: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -52,11 +52,10 @@ const MovieDetails: FC = () => {
   };
 
   const iconColor = isFavorite(id) ? '#01b4e4' : 'gray';
-
   const formattedDate = formatDate(movie.releaseDate);
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <Image style={styles.backdrop} source={{uri: movie.backdrop}} />
       <Image style={styles.poster} source={{uri: movie.poster}} />
       <BookmarkButton

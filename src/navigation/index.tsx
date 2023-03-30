@@ -2,7 +2,7 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/home/HomeScreen';
 import MovieDetailsScreen from '../screens/details/MovieDetailsScreen';
-import {TRootStackParams} from '../types/NavigationProps';
+import {TRootStackParams} from '../types/NavigationTypes';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FavoriteScreen from '../screens/favorites/FavoriteScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';

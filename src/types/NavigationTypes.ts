@@ -2,10 +2,8 @@ import {StackScreenProps} from '@react-navigation/stack';
 
 export type TRootStackParams = {
   Home: undefined;
-  Details: {
-    item: {id: number};
-    id: number;
-  };
+  Details: RouteParams;
+
   onPress: () => void;
 };
 
